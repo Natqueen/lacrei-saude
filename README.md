@@ -1,3 +1,58 @@
+Descrição
+O projeto "Lacrei Saúde" é uma plataforma dedicada à promoção da saúde e bem-estar, com foco na inclusão do público LGBTQIA+. Este projeto foi desenvolvido utilizando a biblioteca React e o framework Next.js para construção de uma aplicação web responsiva e otimizada.
+
+Tecnologias Utilizadas
+React: Biblioteca JavaScript para construção de interfaces de usuário.
+Next.js: Framework React para desenvolvimento de aplicações web que permite renderização no lado do servidor e geração de sites estáticos.
+Styled-components: Biblioteca para estilização de componentes React utilizando CSS-in-JS.
+TypeScript: Superset do JavaScript que adiciona tipos estáticos e é utilizado para melhorar a qualidade do código.
+Tailwind CSS: Framework CSS para estilização rápida e responsiva.
+ESLint: Ferramenta para identificar e corrigir problemas em JavaScript e TypeScript.
+Jest: Framework de testes em JavaScript para realizar testes automatizados da aplicação.
+Estrutura do Projeto
+pages: Contém as páginas da aplicação, como a página inicial (index.tsx) e a página "Sobre" (sobre.tsx).
+components: Componentes reutilizáveis da interface, como Header e Footer.
+styles: Arquivo global de estilos (globals.css).
+tests: Contém os testes da aplicação utilizando Jest.
+Responsividade
+A aplicação foi projetada para ser responsiva, garantindo uma boa experiência em diferentes dispositivos, como desktops, tablets e smartphones. Utilizamos media queries e Flexbox para adaptar o layout às diferentes larguras de tela.
+
+Testes
+Foram realizados testes automatizados utilizando Jest para garantir a funcionalidade dos componentes e da aplicação como um todo.
+
+Comandos para Executar os Testes
+Para executar os testes, utilize o seguinte comando:
+
+bash
+Copiar código
+npm run test
+Instruções de Instalação
+Clone o repositório:
+
+bash
+Copiar código
+git clone <URL do repositório>
+Navegue até o diretório do projeto:
+
+bash
+Copiar código
+cd lacrei-saude
+Instale as dependências:
+
+bash
+Copiar código
+npm install
+Inicie o servidor de desenvolvimento:
+
+bash
+Copiar código
+npm run dev
+Acesse a aplicação no navegador em http://localhost:3000.
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
