@@ -11,9 +11,13 @@ const FooterContainer = styled.footer`
   width: 100%;
 `;
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  style?: React.CSSProperties; // Adicionando a prop style para permitir estilos
+}
+
+const Footer: React.FC<FooterProps> = ({ style }) => {
   return (
-    <FooterContainer>
+    <FooterContainer style={style}>
       <p>&copy; 2024 Lacrei Saúde. Todos os direitos reservados.</p>
     </FooterContainer>
   );

@@ -36,9 +36,13 @@ const Navbar = styled.nav`
   gap: 2rem;
 `;
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  style?: React.CSSProperties; // Permitir passar estilos
+}
+
+const Header: React.FC<HeaderProps> = ({ style }) => {
   return (
-    <HeaderContainer>
+    <HeaderContainer style={style}>
       <Logo>LS</Logo>
       <Navbar>
         <Link href="/">Home</Link>
