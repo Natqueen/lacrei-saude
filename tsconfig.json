@@ -1,42 +1,42 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es5", // Alvo de saída do JavaScript
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "dom", // Para suporte ao DOM
+      "dom.iterable", // Para suporte a iteráveis do DOM
+      "esnext" // Para suporte às funcionalidades mais recentes do JavaScript
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "baseUrl": ".",
+    "allowJs": true, // Permitir arquivos JavaScript
+    "skipLibCheck": true, // Ignorar verificação de tipo em arquivos de declaração
+    "strict": true, // Habilitar todas as verificações de tipo
+    "forceConsistentCasingInFileNames": true, // Forçar consistência de caixa em nomes de arquivos
+    "noEmit": true, // Não emitir arquivos de saída
+    "esModuleInterop": true, // Habilitar interoperabilidade entre módulos ES
+    "module": "commonjs", // Tipo de módulo usado
+    "moduleResolution": "node", // Método de resolução de módulos
+    "resolveJsonModule": true, // Permitir importação de arquivos JSON
+    "isolatedModules": true, // Cada arquivo deve ser tratado como um módulo
+    "jsx": "preserve", // Manter JSX em arquivos de saída (importante para Next.js)
+    "incremental": true, // Habilitar compilação incremental
+    "baseUrl": ".", // Base para resolução de módulos
     "paths": {
       "@/*": [
-        "./src/*"
+        "./src/*" // Mapeamento de caminho para o diretório src
       ]
     },
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Plugin específico para Next.js
       }
     ]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "next-env.d.ts", // Inclusão do arquivo de ambiente do Next.js
+    ".next/types/**/*.ts" // Inclusão de tipos gerados pelo Next.js
   ],
   "exclude": [
-    "node_modules"
+    "node_modules" // Exclusão do diretório node_modules
   ]
 }

@@ -1,83 +1,89 @@
-"use client";
-import Image from "next/image";
-import Header from "../components/Header"; // Certifique-se de que o caminho está correto
-import Footer from "../components/Footer"; // Certifique-se de que o caminho está correto
+"use client"
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import styled from 'styled-components';
+import Link from "next/link";
 
-// Estilizando a página
-const MainContainer = styled.div`
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o footer fique na parte inferior */
+`;
+
+const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 150px);
+  flex: 1; /* Ocupa o espaço disponível entre o header e o footer */
   padding: 2rem;
-  background-color: #f0f4f8; /* Cor de fundo suave */
 `;
 
-const WelcomeMessage = styled.h2`
-  font-size: 2.5rem; /* Aumenta o tamanho da fonte */
-  font-weight: bold; /* Torna o texto em negrito */
-  color: #0078B7; /* Cor do texto */
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7), 0 0 25px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin-bottom: 40px; /* Espaço abaixo do título */
+const WelcomeText = styled.h2`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0078B7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff, 
+    -1px  1px 0 #fff,  
+     1px  1px 0 #fff,
+     2px 2px 5px rgba(0, 0, 0, 0.3);
 `;
 
-const Home = () => {
+const Subtitle = styled.p`
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #333;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+`;
+
+const ActionButton = styled.button`
+  background-color: #00A895;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: #0078B7;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  }
+`;
+
+const Home: React.FC = () => {
   return (
-    <MainContainer>
+    <PageContainer>
       <Header />
-      <WelcomeMessage>Bem-vindo ao Lacrei Saúde</WelcomeMessage>
-      <p>Descubra nossas funcionalidades:</p>
-      <div className="flex gap-4 items-center flex-col sm:flex-row">
-        <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          href="https://paciente.lacreisaude.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/next.svg"
-            alt="Login Paciente"
-            width={20}
-            height={20}
-          />
-          Login paciente
-        </a>
-        <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          href="https://profissional.lacreisaude.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/next.svg"
-            alt="Login Profissional"
-            width={20}
-            height={20}
-          />
-          Login Profissional
-        </a>
-        <a
-          className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          href="https://lacreisaude.com.br/ajuda/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert"
-            src="/next.svg"
-            alt="Dúvidas Frequentes"
-            width={20}
-            height={20}
-          />
-          Dúvidas frequentes
-        </a>
-      </div>
+      <MainContainer>
+        <WelcomeText>Bem-vindo ao Lacrei Saúde</WelcomeText>
+        <Subtitle>Descubra nossas funcionalidades:</Subtitle>
+        <ButtonContainer>
+          <Link href="https://paciente.lacreisaude.com.br/" passHref target="_blank" rel="noopener noreferrer">
+            <ActionButton>Login paciente</ActionButton>
+          </Link>
+          <Link href="https://profissional.lacreisaude.com.br/" passHref target="_blank" rel="noopener noreferrer">
+            <ActionButton>Login Profissional</ActionButton>
+          </Link>
+          <Link href="https://lacreisaude.com.br/ajuda/" passHref target="_blank" rel="noopener noreferrer">
+            <ActionButton>Dúvidas frequentes</ActionButton>
+          </Link>
+        </ButtonContainer>
+      </MainContainer>
       <Footer />
-    </MainContainer>
+    </PageContainer>
   );
 };
 
